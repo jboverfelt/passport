@@ -4,7 +4,7 @@ A Clojure client for the [OpenCNAM](https://www.opencnam.com/) API.
 
 ## Usage
 
-FIXME
+FIXME - Will update shortly
 
 ## License
 
