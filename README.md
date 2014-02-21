@@ -2,6 +2,8 @@
 
 A Clojure client for the [OpenCNAM](https://www.opencnam.com/) API.
 
+[API Documentation](http://jboverfelt.github.io/passport/)
+
 ## Installation
 
 #### Leiningen
