@@ -31,15 +31,18 @@
 
 (defn- passport-get [url username token]
   (-> url
-      (http/get {:accept :json :query-params {"format" "json"} :basic-auth [username token] :throw-exceptions false})
+      (http/get {:accept :json :query-params {"format" "json" "account_sid" username "auth_token" token} :throw-exceptions false})
       (handle-response)))
 
 (defn caller-id
   "Takes the phone number to query and
-   and optional token and sid. Token and 
+   an optional token and sid. The token and sid are
+   for use of the OpenCNAM Professional Tier. Alternatively, the token and 
    sid can be specified in the OPEN_CNAM_TOKEN
-   and OPEN_CNAM_SID env variables or passed in
-   to this function if use of the professional tier is desired"
+   and OPEN_CNAM_SID env variables rather than passing
+   them into this function. If token and sid are not passed in
+   and not set as environment variables, the OpenCNAM Hobbyist Tier
+   will be used"
 
   ([phone]
     (let [url (str base-url phone)
