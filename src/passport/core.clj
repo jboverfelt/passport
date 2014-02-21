@@ -36,11 +36,11 @@
 
 (defn caller-id
   "Takes the phone number to query and
-   an optional token and sid. The token and sid are
-   for use of the OpenCNAM Professional Tier. Alternatively, the token and 
-   sid can be specified in the OPEN_CNAM_TOKEN
-   and OPEN_CNAM_SID env variables rather than passing
-   them into this function. If token and sid are not passed in
+   an optional sid and token. The sid and token are
+   for use of the OpenCNAM Professional Tier. Alternatively, the sid and 
+   token can be specified in the OPEN_CNAM_SID
+   and OPEN_CNAM_TOKEN env variables rather than passing
+   them into this function. If sid and token are not passed in
    and not set as environment variables, the OpenCNAM Hobbyist Tier
    will be used"
 
@@ -50,5 +50,5 @@
           token (get-env-token)]
       (passport-get url username token)))
 
-  ([phone username token]
-    (passport-get (str base-url phone) username token)))
+  ([phone sid token]
+    (passport-get (str base-url phone) sid token)))
