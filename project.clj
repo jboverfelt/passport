@@ -1,4 +1,4 @@
-(defproject passport "0.1.0"
+(defproject passport "0.1.1"
   :description "Clojure client for the OpenCNAM API"
   :url "https://github.com/jboverfelt/passport"
   :license {:name "Eclipse Public License"
