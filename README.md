@@ -8,19 +8,19 @@ A Clojure client for the [OpenCNAM](https://www.opencnam.com/) API.
 
 #### Leiningen
 ```clojure
-[passport "0.1.0"]
+[passport "0.1.1"]
 ```
 #### Maven
 ```xml
 <dependency>
   <groupId>passport</groupId>
   <artifactId>passport</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 #### Gradle
 ```groovy
-compile "passport:passport:0.1.0"
+compile "passport:passport:0.1.1"
 ```
 
 ## Usage
