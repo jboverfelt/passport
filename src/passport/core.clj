@@ -20,14 +20,14 @@
 
 (defn- handle-response [resp]
   (let [status (:status resp)]
-    (cond
-      (= status 200) (json/parse-string (:body resp) true)
-      (= status 400) {:error error-text-400 :status status}
-      (= status 401) {:error error-text-401 :status status}
-      (= status 402) {:error error-text-402 :status status}
-      (= status 403) {:error error-text-403 :status status}
-      (= status 404) {:error error-text-404 :status status}
-      :else          {:error error-text-generic :status status})))
+    (condp = status
+      200 (json/parse-string (:body resp) true)
+      400 {:error error-text-400 :status status}
+      401 {:error error-text-401 :status status}
+      402 {:error error-text-402 :status status}
+      403 {:error error-text-403 :status status}
+      404 {:error error-text-404 :status status}
+          {:error error-text-generic :status status})))
 
 (defn- passport-get [url username token]
   (-> url
@@ -37,7 +37,7 @@
 (defn caller-id
   "Takes the phone number to query and
    an optional sid and token. The sid and token are
-   for use of the OpenCNAM Professional Tier. Alternatively, the sid and 
+   for use of the OpenCNAM Professional Tier. Alternatively, the sid and
    token can be specified in the OPEN_CNAM_SID
    and OPEN_CNAM_TOKEN env variables rather than passing
    them into this function. If sid and token are not passed in
