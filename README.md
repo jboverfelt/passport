@@ -8,19 +8,19 @@ A Clojure client for the [OpenCNAM](https://www.opencnam.com/) API.
 
 #### Leiningen
 ```clojure
-[passport "0.1.1"]
+[passport "0.1.2"]
 ```
 #### Maven
 ```xml
 <dependency>
   <groupId>passport</groupId>
   <artifactId>passport</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 #### Gradle
 ```groovy
-compile "passport:passport:0.1.1"
+compile "passport:passport:0.1.2"
 ```
 
 ## Usage
@@ -37,11 +37,11 @@ Returns a Clojure map containing the Caller ID results or an error and the statu
 
 (ns my.ns
   (:require [passport.core :refer :all]))
-  
+
 ;; Hobbyist Tier query
 
 (caller-id "+16502530000")
-;; => {:price 0, :uri "/v2/phone/%2B16502530000", :created "2012-10-12T06:53:05.194858", 
+;; => {:price 0, :uri "/v2/phone/%2B16502530000", :created "2012-10-12T06:53:05.194858",
 ;;     :number "+16502530000",
 ;;     :updated "2014-02-20T18:59:27.279412", :name "GOOGLE INC"}
 
@@ -51,7 +51,7 @@ Returns a Clojure map containing the Caller ID results or an error and the statu
 ;; => {:error "No CNAM information available for phone number", :status 404}
 
 ;; Professional Tier Query
-; sid and token can either be passed in or 
+; sid and token can either be passed in or
 ; set in OPEN_CNAM_SID and OPEN_CNAM_TOKEN env variables
 
 (caller-id "+16502530000" "sid" "token")
@@ -60,7 +60,7 @@ Returns a Clojure map containing the Caller ID results or an error and the statu
 
 ## License
 
-Copyright © 2014- Justin Overfelt
+Copyright © 2015- Justin Overfelt
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
